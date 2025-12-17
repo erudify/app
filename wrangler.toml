@@ -1,4 +1,4 @@
-name = "rust-cf-leptos"
+name = "erudify-app"
 main = ".wrangler/dist/worker/worker.js"
 compatibility_date = "2024-11-23"
 workers_dev = true
@@ -10,6 +10,14 @@ command = "nix build .#website -o .wrangler/dist"
 directory = ".wrangler/dist/assets"
 binding = "ASSETS"
 not_found_handling = "single-page-application"
+
+# Production environment with custom domain
+[env.production]
+workers_dev = false
+routes = [
+  { pattern = "erudify.org", custom_domain = true },
+  { pattern = "www.erudify.org", custom_domain = true },
+]
 
 [env.e2e]
 main = "result/worker/worker.js"
