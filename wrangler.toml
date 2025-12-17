@@ -16,7 +16,7 @@ not_found_handling = "single-page-application"
 workers_dev = false
 routes = [
   { pattern = "erudify.org", custom_domain = true },
-  { pattern = "www.erudify.org", custom_domain = true }
+  { pattern = "www.erudify.org", custom_domain = true },
 ]
 
 [env.e2e]
